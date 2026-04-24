@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,6 +12,10 @@ return new class extends Migration
     {
         Schema::create('detail_transaksi_barangs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('transaksi_barang_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('barang_marketplaces_id')->constrained('barang_marketplaces')->cascadeOnDelete();
+            $table->integer('quantity');
+            $table->double('price');
             $table->timestamps();
         });
     }
