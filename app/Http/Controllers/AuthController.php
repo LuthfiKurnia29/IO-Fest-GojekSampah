@@ -12,7 +12,11 @@ class AuthController extends Controller
         $this->userServices = $userService;
     }
     //
-    public function login(Request $request){
+
+    public function login(){
+        return view('auth.login');
+    }
+    public function loginProcess(Request $request){
         $data = $request->all();
         $result = $this->userServices->login($data);
         if($result['user'] != null && $result['token'] != null){
