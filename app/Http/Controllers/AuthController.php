@@ -66,4 +66,9 @@ class AuthController extends Controller
     {
         return view('auth.lupa-password');
     }
+
+    public function lupaPasswordProcess(Request $request)
+    {
+        return view('auth.email-terkirim-sukses');
+    }
 }
