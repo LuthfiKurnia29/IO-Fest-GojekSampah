@@ -1,11 +1,123 @@
-@import 'tailwindcss';
+:root {
+    --envyra-green: #064e3b;
+    --nav-text-color: #475569;
+    --envyra-brown: #8a5a3b;
+    --hero-bg: #f8f9fa;
+    --badge-bg: #eae6f5;
+    --badge-text: #4a446f;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* landing page */
+.envyra-logo-custom {
+    font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: var(--envyra-green) !important;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.nav-link-custom {
+    color: var(--nav-text-color) !important;
+    font-size: 15px;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    color: var(--envyra-green) !important;
+}
+
+.btn-gabung-custom {
+    background-color: var(--envyra-green);
+    border: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-gabung-custom:hover {
+    background-color: #04382a;
+}
+
+/* --- Hero Section --- */
+.hero-title-custom {
+    font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.hero-btn-outline {
+    background-color: transparent;
+    color: var(--envyra-brown);
+    border: 1px solid var(--envyra-brown);
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.hero-btn-outline:hover {
+    background-color: var(--envyra-brown);
+    color: #fff;
+}
+
+.hero-image-custom {
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Features Section --- */
+.feature-card-custom {
+    background-color: #f8f9fe !important;
+    border-radius: 20px !important;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.feature-card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.icon-box-custom {
+    width: 60px;
+    height: 60px;
+    background-color: #e2e8f0;
+    color: var(--envyra-green);
+}
+
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 36px;
+    }
+    .hero-description {
+        max-width: 100%;
+    }
+    .hero-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .col-lg-6.pr-lg-5 {
+        padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .px-desktop-48 {
+        padding-left: 48px !important;
+        padding-right: 48px !important;
+    }
+
+    .nav-gap-32 {
+        gap: 32px;
+    }
+
+    .pr-lg-5 {
+        padding-right: 3rem !important;
+    }
+    .hero-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
 }

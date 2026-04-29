@@ -7,3 +7,6 @@ use App\Http\Controllers\BerandaController;
 Route::get('/', [BerandaController::class, 'index']);
 
 Route::get('/login', [AuthController::class, 'login']);
+Route::get('/coba', function () {
+    return view('welcome');
+});
