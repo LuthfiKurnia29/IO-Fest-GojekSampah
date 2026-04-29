@@ -1,4 +1,4 @@
-<div class="min-vh-100 d-flex flex-column justify-content-center align-items-center py-5" style="background-color: #F8F9FA;">
+<div class="d-flex flex-column justify-content-center align-items-center py-5" style="background-color: #F8F9FA;">
 
     <div class="card border-0 shadow-sm rounded-3 w-100 p-4 p-sm-5" style="max-width: 450px;">
         <div class="card-body p-0 text-center">
@@ -35,7 +35,7 @@
                         <input class="form-check-input shadow-none" type="checkbox" id="ingatSaya" style="border-color: #CBD5E1;">
                         <label class="form-check-label text-secondary" for="ingatSaya">Ingat Saya</label>
                     </div>
-                    <a href="#" class="text-decoration-none fw-medium" style="color: #8A5A3B;">Lupa Kata Sandi?</a>
+                    <a href="{{ url('/lupa-password') }}" class="text-decoration-none fw-medium" style="color: #8A5A3B;">Lupa Kata Sandi?</a>
                 </div>
 
                 <button type="submit" class="btn w-100 fw-medium py-2 mb-4" style="background-color: #064E3B; color: #ffffff;">Masuk</button>
@@ -60,7 +60,9 @@
         </div>
 
         <div class="text-center mt-5">
-            <p class="text-secondary mb-0" style="font-size: 14px;">Belum punya akun? <a href="#" class="text-decoration-none fw-semibold" style="color: #064E3B;">Daftar Sekarang</a></p>
+            <p class="text-secondary mb-0" style="font-size: 14px;">Belum punya akun?
+                <a href="{{ url('/register') }}" class="text-decoration-none fw-semibold" style="color: #064E3B;">Daftar Sekarang</a>
+            </p>
         </div>
     </div>
 </div>

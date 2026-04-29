@@ -34,7 +34,7 @@
         </div>
 
         <div class="text-center mt-2">
-            <a href="#" class="text-decoration-none fw-semibold" style="color: #064E3B;">
+            <a href="{{ url('/login') }}" class="text-decoration-none fw-semibold" style="color: #064E3B;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                 </svg>
