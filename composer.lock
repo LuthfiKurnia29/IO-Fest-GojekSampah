@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c57754c93ae34ac3b9b716a0fd2f2149",
+    "content-hash": "afa0ad00958d675c4916dd5f81cd31ff",
     "packages": [
         {
             "name": "brick/math",
@@ -507,6 +507,57 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "elic-dev/laravel-math-captcha",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elic-dev/laravel-math-captcha.git",
+                "reference": "8c79f79297126b43e388ac8f0ab0f7da4bb0fb5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elic-dev/laravel-math-captcha/zipball/8c79f79297126b43e388ac8f0ab0f7da4bb0fb5b",
+                "reference": "8c79f79297126b43e388ac8f0ab0f7da4bb0fb5b",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ElicDev\\MathCaptcha\\MathCaptchaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ElicDev\\MathCaptcha\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Lill",
+                    "email": "m.lill@gmx.de"
+                }
+            ],
+            "description": "A simple math captcha for Laravel form validation.",
+            "keywords": [
+                "captcha",
+                "laravel",
+                "laravel5",
+                "math",
+                "math-captcha"
+            ],
+            "support": {
+                "issues": "https://github.com/elic-dev/laravel-math-captcha/issues",
+                "source": "https://github.com/elic-dev/laravel-math-captcha/tree/1.1.1"
+            },
+            "time": "2022-07-25T08:24:17+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -8149,5 +8200,5 @@
         "php": "^8.3"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

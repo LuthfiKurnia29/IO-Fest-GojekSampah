@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Interfaces\IUserService;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -38,5 +39,26 @@ class AuthController extends Controller
     public function register()
     {
         return view('auth.register');
+    }
+
+    public function registerProcess(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'nama_lengkap' => 'required',
+            'email'        => 'required|email',
+            'mathcaptcha'  => 'required|mathcaptcha',
+        ]);
+
+        if ($validator->fails()) {
+            app('mathcaptcha')->reset();
+
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        app('mathcaptcha')->reset();
+
+        // proses simpan data...
     }
 }

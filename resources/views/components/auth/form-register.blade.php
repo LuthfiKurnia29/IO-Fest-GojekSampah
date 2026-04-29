@@ -11,8 +11,8 @@
                 </p>
             </div>
 
-            <form class="row g-3 text-start">
-
+            <form class="row g-3 text-start" method="POST" action="{{ url('/register') }}">
+                @csrf
                 <div class="col-12">
                     <label class="form-label fw-medium text-dark" style="font-size: 14px;">Nama Lengkap</label>
                     <div class="input-group">
@@ -95,10 +95,15 @@
                     <div class="rounded-3 p-3 d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3" style="background-color: #F8F8FF; border: 1px solid #E2E8F0;">
                         <div>
                             <h6 class="fw-bold mb-1 text-dark" style="font-size: 14px;">Verifikasi Keamanan</h6>
-                            <p class="mb-0 text-secondary" style="font-size: 13px;">Berapa hasil dari 5 + 3?</p>
+                            <p class="mb-0 text-secondary" style="font-size: 13px;">Berapa hasil dari {{ app('mathcaptcha')->label() }}??</p>
                         </div>
-                        <input type="text" class="form-control shadow-none text-center" placeholder="Jawaban" style="max-width: 120px; border-color: #CBD5E1;">
+
+                        {!! app('mathcaptcha')->input(['class' => 'form-control shadow-none text-center', 'style' => 'max-width: 120px; border-color: #CBD5E1;', 'placeholder' => 'Jawaban']) !!}
                     </div>
+
+                    @error('mathcaptcha')
+                    <span class="text-danger">Jawaban salah, silakan coba soal baru di atas.</span>
+                    @enderror
                 </div>
 
                 <div class="col-12 mt-4">
