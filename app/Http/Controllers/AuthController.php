@@ -61,4 +61,9 @@ class AuthController extends Controller
 
         // proses simpan data...
     }
+
+    public function lupaPassword()
+    {
+        return view('auth.lupa-password');
+    }
 }

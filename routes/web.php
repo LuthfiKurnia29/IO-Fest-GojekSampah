@@ -9,3 +9,5 @@ Route::get('/', [BerandaController::class, 'index']);
 Route::get('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'registerProcess']);
+
+Route::get('/lupa-password', [AuthController::class, 'lupaPassword']);
