@@ -1,4 +1,4 @@
-<footer class="py-5" style="background-color: #F8F9FA; border-top: 1px solid #F1F5F9;">
+<footer class="py-5 bg-white" style="border-top: 1px solid #F1F5F9;">
     <div class="container-fluid px-lg-5">
 
         <div class="row g-4 justify-content-between">
