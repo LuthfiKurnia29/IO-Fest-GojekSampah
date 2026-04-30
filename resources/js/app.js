@@ -12,7 +12,6 @@ function aturTombolHapus() {
         } else {
             tombol.classList.remove("d-none");
         }
-
     });
 }
 
@@ -38,3 +37,5 @@ container.addEventListener("click", (e) => {
 });
 
 btnTambah.click();
+
+

@@ -1,3 +1,5 @@
-<div>
-    <!-- The best way to take care of the future is to take care of the present moment. - Thich Nhat Hanh -->
-</div>
+<x-layouts.sidebar>
+    <x-layouts.header />
+    <x-order.kurir.main-content />
+    <x-order.kurir.modal-tugas />
+</x-layouts.sidebar>
