@@ -13,10 +13,13 @@ class TaskService implements ITaskService
     {
         //
     }
-    public function takeTask($id)
+    public function takeTask()
     {
-        $task = TransaksiSampah::find($id);
-        $task->update(['status' => 'taken']);
+        $task = TransaksiSampah::where('kurir_id', auth()->user()->id)->where('status', 'taken')->get();
+        if($task == null){
+            throw new Exception("Task not found", 404);
+        }
+        // $task->update(['status' => 'taken']);
         return $task;
     }
     public function completeTask($id)

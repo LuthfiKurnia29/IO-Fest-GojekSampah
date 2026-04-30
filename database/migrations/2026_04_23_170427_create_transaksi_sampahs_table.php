@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->integer('kurir_id');
             $table->foreignId('jenis_sampah_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('wilayah_id')->constrained()->cascadeOnDelete();
+            // $table->foreignId('wilayah_id')->constrained()->cascadeOnDelete();
             $table->double('harga');
             $table->double('berat');
             $table->enum('status', ['pending', 'taken', 'completed', 'assigned'])->default('pending');

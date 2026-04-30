@@ -6,6 +6,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\TransaksiSampahController;
 use App\Http\Controllers\CatalogController;
 
 // Landing Page
@@ -37,14 +38,15 @@ Route::post('/jenis-sampah', [JenisSampahController::class, 'createJenisSampah']
 Route::put('/jenis-sampah/{id}', [JenisSampahController::class, 'updateJenisSampah'])->name('updateJenisSampah');
 Route::delete('/jenis-sampah/{id}', [JenisSampahController::class, 'deleteJenisSampah'])->name('deleteJenisSampah');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/order-pengambilan', function () {
-        return view('order.user.order-pengambilan');
-    })->name('order-pengambilan');
 
-    Route::get('/tugas-kurir', function () {
-        return view('order.kurir.tugas-kurir');
-    })->name('tugas-kurir');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/order-pengambilan', [TransaksiSampahController::class, 'getViewMarket'])->name('order-pengambilan');
+    Route::post('/order-pengambilan', [TransaksiSampahController::class, 'order'])->name('order');
+
+    // get order user
+    Route::get('/get-order', [TransaksiSampahController::class, 'getRunningOrder'])->name('get-order');
 
     Route::get('/get-task', [TaskController::class, 'getTasksKurir'])->name('getTasksKurir');
+
 });
