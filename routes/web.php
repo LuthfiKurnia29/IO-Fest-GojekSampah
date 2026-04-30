@@ -16,3 +16,7 @@ Route::get('/email-terkirim', function () {
     return view('auth.email-terkirim-sukses');
 });
 Route::get('/ganti-password', [AuthController::class, 'gantiPassword']);
+
+Route::get('/order-pengambilan', function () {
+    return view('order.user.order-pengambilan');
+});
