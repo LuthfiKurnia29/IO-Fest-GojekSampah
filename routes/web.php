@@ -28,7 +28,6 @@ Route::get('/ganti-password', [AuthController::class, 'gantiPassword']);
 
 // Set Task Kurir
 Route::post('/set-task', [TaskController::class, 'setTasksKurir'])->name('setTasksKurir');
-Route::get('/get-task', [TaskController::class, 'getTasksKurir'])->name('getTasksKurir');
 Route::post('/take-task', [TaskController::class, 'takeTask'])->name('takeTask');
 Route::post('/complete-task', [TaskController::class, 'completeTask'])->name('completeTask');
 
@@ -46,4 +45,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tugas-kurir', function () {
         return view('order.kurir.tugas-kurir');
     })->name('tugas-kurir');
+
+    Route::get('/get-task', [TaskController::class, 'getTasksKurir'])->name('getTasksKurir');
 });

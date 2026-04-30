@@ -225,3 +225,19 @@
         display: block !important;
     }
 }
+
+.bg-success-subtle {
+    background-color: #e8f5e9 !important;
+}
+
+.bg-primary-subtle {
+    background-color: #e3f2fd !important;
+}
+
+.bg-warning-subtle {
+    background-color: #fff3e0 !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05) !important;
+}
