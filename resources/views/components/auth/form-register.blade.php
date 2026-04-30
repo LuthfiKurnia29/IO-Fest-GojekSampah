@@ -1,4 +1,4 @@
-<div class="min-vh-100 d-flex flex-column justify-content-center align-items-center py-5" style="background-color: #F8F9FA;">
+<div class="d-flex flex-column justify-content-center align-items-center py-5" style="background-color: #F8F9FA;">
 
     <div class="card border-0 shadow-sm rounded-4 w-100 overflow-hidden" style="max-width: 650px;">
 
@@ -117,7 +117,9 @@
                 </div>
 
                 <div class="col-12 text-center mt-3">
-                    <p class="text-secondary mb-0" style="font-size: 14px;">Sudah punya akun? <a href="#" class="text-decoration-none fw-semibold" style="color: #1A4731;">Masuk</a></p>
+                    <p class="text-secondary mb-0" style="font-size: 14px;">Sudah punya akun?
+                        <a href="{{ url('/login') }}" class="text-decoration-none fw-semibold" style="color: #1A4731;">Masuk</a>
+                    </p>
                 </div>
 
             </form>

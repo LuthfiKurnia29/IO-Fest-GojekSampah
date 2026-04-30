@@ -11,3 +11,8 @@ Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'registerProcess']);
 
 Route::get('/lupa-password', [AuthController::class, 'lupaPassword']);
+Route::post('/lupa-password', [AuthController::class, 'lupaPasswordProcess']);
+Route::get('/email-terkirim', function () {
+    return view('auth.email-terkirim-sukses');
+});
+Route::get('/ganti-password', [AuthController::class, 'gantiPassword']);
