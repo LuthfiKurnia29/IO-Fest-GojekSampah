@@ -23,16 +23,27 @@ class AuthController extends Controller
     {
         $data = $request->all();
         $result = $this->userServices->login($data);
-        if ($result['user'] != null && $result['token'] != null) {
-            return response()->json([
-                'message' => 'Login success',
-                'user' => $result['user'],
-                'token' => $result['token'],
-            ], 200);
+        if ($result['user'] != null) {
+            // cookie(
+            //     $result['user'],
+            //     120,
+            //     '/',
+            //     null,
+            //     false,
+            //     false
+            // );
+            if($result['user']->role != 'user'){
+                // redirect dashboard
+            }else{
+                // redirect landing page
+                return redirect()->route('landing-page');
+            }
+
         } else {
-            return response()->json([
-                'message' => 'Login failed',
-            ], 401);
+            // return response()->json([
+            //     'message' => 'Logout failed',
+            // ], 401);
+            return redirect()->route('login')->with('error', 'Login failed');
         }
     }
 

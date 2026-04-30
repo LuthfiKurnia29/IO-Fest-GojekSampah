@@ -25,10 +25,10 @@ class UserService implements IUserService
         if (!$user || !Hash::check($data['password'], $user->password)) {
             return null;
         }
-        $token = $user->createToken('token')->plainTextToken;
+        // $token = $user->createToken('token')->plainTextToken;
         return [
             'user' => $user,
-            'token' => $token,
+            'role' => $user->role,
         ];
     }
     public function logout(){

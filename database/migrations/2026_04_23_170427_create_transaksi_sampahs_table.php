@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->foreignId('wilayah_id')->constrained()->cascadeOnDelete();
             $table->double('harga');
             $table->double('berat');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

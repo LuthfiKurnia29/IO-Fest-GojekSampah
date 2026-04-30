@@ -3,6 +3,7 @@
 namespace App\Services\Implementations;
 
 use App\Services\Interfaces\IJenisSampahService;
+use App\Models\JenisSampah;
 
 class JenisSampahService implements IJenisSampahService
 {
@@ -15,22 +16,22 @@ class JenisSampahService implements IJenisSampahService
     }
     public function getAllJenisSampahs()
     {
-        // return JenisSampah::all();
+        return JenisSampah::all();
     }
     public function getJenisSampahById($id)
     {
-        // return JenisSampah::find($id);
+        return JenisSampah::find($id);
     }
     public function createJenisSampah(array $data)
     {
-        // return JenisSampah::create($data);
+        return JenisSampah::create($data);
     }
     public function updateJenisSampah($id, array $data)
     {
-        // return JenisSampah::find($id)->update($data);
+        return JenisSampah::find($id)->update($data);
     }
     public function deleteJenisSampah($id)
     {
-        // return JenisSampah::find($id)->delete();
+        return JenisSampah::find($id)->delete();
     }
 }
