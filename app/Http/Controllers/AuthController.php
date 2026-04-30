@@ -89,4 +89,10 @@ class AuthController extends Controller
     {
         return view('auth.ganti-password');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }

@@ -4,7 +4,7 @@ return [
     'sidebar' => [
         [
             'name' => 'Dashboard',
-            'route' => 'order-pengambilan',
+            'route' => 'getJenisSampah',
             'roles' => ['user', 'admin', 'kurir'],
             'icon' => 'assets/icon/dashboard.svg'
         ],
@@ -16,61 +16,61 @@ return [
         ],
         [
             'name' => 'Marketplace',
-            'route' => 'order-pengambilan',
+            'route' => 'getJenisSampah',
             'roles' => ['user'],
             'icon' => 'assets/icon/market.svg'
         ],
         [
             'name' => 'Tukar Poin',
-            'route' => 'order-pengambilan',
+            'route' => 'getJenisSampah',
             'roles' => ['user'],
             'icon' => 'assets/logo-ep.png'
         ],
         [
             'name' => 'Tugas Penjemputan',
+            'route' => 'tugas-kurir',
+            'roles' => ['kurir'],
+            'icon' => 'assets/icon/task.svg'
+        ],
+        [
+            'name' => 'Penugasan Kurir',
             'route' => 'order-pengambilan',
             'roles' => ['admin'],
             'icon' => ''
         ],
         [
-            'name' => 'Penugasan Kurir',
-            'route' => 'order-pengambilan',
-            'roles' => ['kurir'],
-            'icon' => ''
-        ],
-        [
             'name' => 'Manajemen Sampah',
             'route' => 'order-pengambilan',
-            'roles' => ['kurir'],
+            'roles' => ['admin'],
             'icon' => ''
         ],
         [
             'name' => 'Manajemen Pengguna',
             'route' => 'order-pengambilan',
-            'roles' => ['kurir'],
+            'roles' => ['admin'],
             'icon' => ''
         ],
         [
             'name' => 'Ops Marketplace',
             'route' => 'order-pengambilan',
-            'roles' => ['kurir'],
+            'roles' => ['admin'],
             'icon' => ''
         ],
         [
             'name' => 'Log Aktivitas',
             'route' => 'order-pengambilan',
-            'roles' => ['kurir'],
+            'roles' => ['admin'],
             'icon' => ''
         ],
         [
             'name' => 'Riwayat',
-            'route' => 'order-pengambilan',
-            'roles' => ['user', 'admin'],
+            'route' => 'getJenisSampah',
+            'roles' => ['user', 'admin', 'kurir'],
             'icon' => 'assets/icon/history.svg'
         ],
         [
             'name' => 'Profil',
-            'route' => 'order-pengambilan',
+            'route' => 'getJenisSampah',
             'roles' => ['user', 'admin', 'kurir'],
             'icon' => 'assets/icon/user.svg'
         ],

@@ -13,9 +13,10 @@ Route::get('/', [BerandaController::class, 'index'])->name('landing-page');
 
 // Authentication
 Route::get('/login', [AuthController::class, 'login'])->name('login');
-Route::post('/login', [AuthController::class, 'loginProcess']); 
+Route::post('/login', [AuthController::class, 'loginProcess']);
 Route::get('/register', [AuthController::class, 'register']);
 Route::post('/register', [AuthController::class, 'registerProcess']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Forgot Password
 Route::get('/lupa-password', [AuthController::class, 'lupaPassword']);
@@ -24,10 +25,6 @@ Route::get('/email-terkirim', function () {
     return view('auth.email-terkirim-sukses');
 });
 Route::get('/ganti-password', [AuthController::class, 'gantiPassword']);
-
-Route::get('/order-pengambilan', function () {
-    return view('order.user.order-pengambilan');
-})->middleware(['auth'])->name('order-pengambilan');
 
 // Set Task Kurir
 Route::post('/set-task', [TaskController::class, 'setTasksKurir'])->name('setTasksKurir');
@@ -40,3 +37,13 @@ Route::get('/jenis-sampah', [JenisSampahController::class, 'getJenisSampah'])->n
 Route::post('/jenis-sampah', [JenisSampahController::class, 'createJenisSampah'])->name('createJenisSampah');
 Route::put('/jenis-sampah/{id}', [JenisSampahController::class, 'updateJenisSampah'])->name('updateJenisSampah');
 Route::delete('/jenis-sampah/{id}', [JenisSampahController::class, 'deleteJenisSampah'])->name('deleteJenisSampah');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/order-pengambilan', function () {
+        return view('order.user.order-pengambilan');
+    })->name('order-pengambilan');
+
+    Route::get('/tugas-kurir', function () {
+        return view('order.kurir.tugas-kurir');
+    })->name('tugas-kurir');
+});
