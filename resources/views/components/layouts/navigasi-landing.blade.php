@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-white border-bottom border-light-subtle align-items-center py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom border-light-subtle align-items-center py-3">
     <div class="container-fluid px-desktop-48">
 
         <a class="navbar-brand envyra-logo-custom fw-bold p-0 d-flex align-items-center text-envyra-green fs-4" href="#home">Envyra</a>

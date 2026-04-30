@@ -3,13 +3,13 @@
     --envyra-green-hover: #04382a;
     --nav-text-color: #475569;
     --envyra-brown: #8a5a3b;
-    --hero-bg: #FAF7FE;
-    --process-bg: #F4F2FF;
-    --badge-bg1: #DEE0FF;
-    --badge-bg2: #012D1D;
-    --badge-bg3: #FFC697;
+    --hero-bg: #faf7fe;
+    --process-bg: #f4f2ff;
+    --badge-bg1: #dee0ff;
+    --badge-bg2: #012d1d;
+    --badge-bg3: #ffc697;
     --badge-text: #4a446f;
-    --market-bg: #DEE0FF;
+    --market-bg: #dee0ff;
 }
 
 /* Typography & Colors Utilities */
@@ -70,11 +70,7 @@
 .hero-title-custom {
     font-family:
         "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
-    font-size: clamp(
-        2.5rem,
-        5vw,
-        3rem
-    ); /* Responsive typography tanpa media query ribet */
+    font-size: clamp(2.5rem, 5vw, 3rem);
     letter-spacing: -1px;
 }
 
@@ -129,6 +125,16 @@
 .feature-card-custom:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-toggler-icon {
+    display: inline-block !important;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 @media (min-width: 992px) {
