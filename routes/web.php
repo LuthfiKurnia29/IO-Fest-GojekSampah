@@ -15,3 +15,4 @@ Route::post('/lupa-password', [AuthController::class, 'lupaPasswordProcess']);
 Route::get('/email-terkirim', function () {
     return view('auth.email-terkirim-sukses');
 });
+Route::get('/ganti-password', [AuthController::class, 'gantiPassword']);

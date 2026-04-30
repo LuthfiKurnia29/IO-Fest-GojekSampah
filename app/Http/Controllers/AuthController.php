@@ -71,4 +71,9 @@ class AuthController extends Controller
     {
         return view('auth.email-terkirim-sukses');
     }
+
+    public function gantiPassword()
+    {
+        return view('auth.ganti-password');
+    }
 }
