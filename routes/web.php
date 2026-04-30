@@ -25,6 +25,9 @@ Route::get('/email-terkirim', function () {
 });
 Route::get('/ganti-password', [AuthController::class, 'gantiPassword']);
 
+Route::get('/order-pengambilan', function () {
+    return view('order.user.order-pengambilan');
+});
 
 // Set Task Kurir
 Route::post('/set-task', [TaskController::class, 'setTasksKurir'])->name('setTasksKurir');
