@@ -22,8 +22,8 @@
                 </p>
 
                 <div class="d-flex flex-wrap gap-3 mb-5">
-                    <a href="#" class="btn btn-gabung-custom px-4 py-2">Mulai Daur Ulang</a>
-                    <a href="#" class="btn hero-btn-outline px-4 py-2 d-inline-flex align-items-center">
+                    <a href="{{ route('login') }}" class="btn btn-gabung-custom px-4 py-2">Mulai Daur Ulang</a>
+                    <a href="{{ route('landing-page') }}#market" class="btn hero-btn-outline px-4 py-2 d-inline-flex align-items-center">
                         Jelajahi Marketplace
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ms-2">
                             <path d="M5 12h14M12 5l7 7-7 7" />

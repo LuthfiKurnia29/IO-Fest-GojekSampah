@@ -10,21 +10,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto d-flex align-items-center gap-3 gap-lg-4">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-custom fw-medium p-0" href="#benefit">Layanan</a>
+                    <a class="nav-link nav-link-custom fw-medium p-0" href="{{ route('landing-page') }}#benefit">Layanan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-custom fw-medium p-0" href="#process">Cara Kerja</a>
+                    <a class="nav-link nav-link-custom fw-medium p-0" href="{{ route('landing-page') }}#process">Cara Kerja</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-custom fw-medium p-0" href="#services">Jenis Sampah</a>
+                    <a class="nav-link nav-link-custom fw-medium p-0" href="{{ route('landing-page') }}#services">Jenis Sampah</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-custom fw-medium p-0" href="#market">Marketplace</a>
+                    <a class="nav-link nav-link-custom fw-medium p-0" href="{{ route('landing-page') }}#market">Marketplace</a>
                 </li>
             </ul>
 
             <div class="d-flex mt-3 mt-lg-0">
-                <a class="btn btn-gabung-custom fw-medium px-4 py-2 rounded d-flex align-items-center justify-content-center" href="#">Gabung Sekarang</a>
+                <a class="btn btn-gabung-custom fw-medium px-4 py-2 rounded d-flex align-items-center justify-content-center" href="{{ route('login') }}">Gabung Sekarang</a>
             </div>
         </div>
 
