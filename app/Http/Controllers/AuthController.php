@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Services\Interfaces\IUserService;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -32,13 +33,14 @@ class AuthController extends Controller
             //     false,
             //     false
             // );
-            if($result['user']->role != 'user'){
-                // redirect dashboard
-            }else{
-                // redirect landing page
-                return redirect()->route('landing-page');
-            }
-
+            Auth::login($result['user']);
+            // if ($result['user']->role != 'user') {
+            // redirect dashboard
+            return redirect()->route('order-pengambilan');
+            // } else {
+            //     // redirect landing page
+            //     return redirect()->route('landing-page');
+            // }
         } else {
             // return response()->json([
             //     'message' => 'Logout failed',
