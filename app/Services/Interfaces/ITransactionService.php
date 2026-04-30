@@ -6,4 +6,5 @@ interface ITransactionService
 {
     //
     public function createOrder($request);
+    public function getRunningOrder();
 }

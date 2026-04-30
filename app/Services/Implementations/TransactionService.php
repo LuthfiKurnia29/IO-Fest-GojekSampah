@@ -19,36 +19,62 @@ class TransactionService implements ITransactionService
         //
     }
     public function createOrder($request){
-        // ambil user yang memesan
-         $user = User::find($request->user_id);
-         if($user == null){
-            throw new RecordNotFoundException("Users not found", 404);
-         }
+        $user = auth()->user() ?? (isset($request['user_id']) ? User::find($request['user_id']) : null);
+        
+        if($user == null){
+           throw new RecordNotFoundException("Users not found", 404);
+        }
 
-         // Ambil kurir dengan status available
-         $kurir = User::where('role', 'kurir')
-            ->where('is_available', 'available')
-            ->first();
+        // Update alamat user jika diinputkan yang baru
+        if(isset($request['alamat'])){
+            $user->update(['alamat' => $request['alamat']]);
+        }
+
+        // Ambil kurir dengan status available
+        $kurir = User::where('role', 'kurir')
+           ->where('is_available', 'available')
+           ->first();
+       
         if($kurir == null){
             throw new Exception("Kurir sedang penuh, mohon coba beberapa saat lagi.", 404);
         }
-        $jenis = JenisSampah::where('id', $request->jenis_sampah_id)->first();
-        // create pesanan dari order diatas
-        $orderFix = TransaksiSampah::create([
-            'user_id' => $user->id,
-            'jenis_sampah_id' => $jenis->id,
-            'berat' => $request->berat,
-            'harga' => $request->berat * $jenis->harga,
-            'kurir_id' => $kurir->id,
-            'status' => 'taken',
-        ]);
 
-        // ubah status kurir menjadi booked
-        $kurir->update([
-            'is_available' => 'booked',
-        ]);
+        $orderFix = null;
+        
+        // Loop through arrays from form
+        if(isset($request['jenis_sampah']) && is_array($request['jenis_sampah'])){
+            foreach($request['jenis_sampah'] as $key => $jenisId){
+                $berat = $request['berat_sampah'][$key] ?? 0;
+                if($berat <= 0) continue;
+
+                $jenis = JenisSampah::find($jenisId);
+                if(!$jenis) continue;
+
+                $orderFix = TransaksiSampah::create([
+                    'user_id' => $user->id,
+                    'jenis_sampah_id' => $jenis->id,
+                    'berat' => $berat,
+                    'harga' => $berat * $jenis->harga,
+                    'kurir_id' => $kurir->id,
+                    'wilayah_id' => $user->wilayah_id ?? $kurir->wilayah_id ?? 1,
+                    'status' => 'taken',
+                ]);
+            }
+        }
+
+        if($orderFix){
+            // ubah status kurir menjadi booked
+            $kurir->update([
+                'is_available' => 'booked',
+            ]);
+        }
 
         return $orderFix;
-        //  dd($kurir);
+    }
+
+    public function getRunningOrder(){
+        $user = auth()->user();
+        $order = TransaksiSampah::where('user_id', $user->id)->where('status', 'taken')->first();
+        return $order;
     }
 }

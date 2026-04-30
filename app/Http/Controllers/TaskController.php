@@ -13,11 +13,6 @@ class TaskController extends Controller
         $this->taskService = $iTaskService;
     }
     //
-    public function setTasksKurir(Request $request)
-    {
-        $this->taskService->assignTask($request->id);
-    }
-
     public function getTasksKurir()
     {
         return view('order.admin.set-tugas');
