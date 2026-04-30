@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div>
         {{ $slot }}
     </div>
 </body>
