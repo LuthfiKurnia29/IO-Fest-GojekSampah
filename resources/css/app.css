@@ -1,56 +1,105 @@
 :root {
     --envyra-green: #064e3b;
+    --envyra-green-hover: #04382a;
     --nav-text-color: #475569;
     --envyra-brown: #8a5a3b;
-    --hero-bg: #f8f9fa;
-    --badge-bg: #eae6f5;
+    --hero-bg: #faf7fe;
+    --process-bg: #f4f2ff;
+    --badge-bg1: #dee0ff;
+    --badge-bg2: #012d1d;
+    --badge-bg3: #ffc697;
     --badge-text: #4a446f;
+    --market-bg: #dee0ff;
 }
 
-/* landing page */
+/* Typography & Colors Utilities */
+.text-envyra-green {
+    color: var(--envyra-green) !important;
+}
+.text-envyra-brown {
+    color: var(--envyra-brown) !important;
+}
+.text-nav {
+    color: var(--nav-text-color) !important;
+}
+.bg-hero {
+    background-color: var(--hero-bg) !important;
+}
+.bg-process {
+    background-color: var(--process-bg) !important;
+}
+.bg-market {
+    background-color: var(--market-bg) !important;
+}
+.bg-badge1 {
+    background-color: var(--badge-bg1) !important;
+    color: var(--badge-text) !important;
+}
+.bg-badge2 {
+    background-color: var(--badge-bg2) !important;
+    color: var(--badge-text) !important;
+}
+.bg-badge3 {
+    background-color: var(--badge-bg3) !important;
+    color: var(--badge-text) !important;
+}
+.text-tracking-wide {
+    letter-spacing: 1.5px;
+}
+
+/* Custom Sizing for Icons */
+.icon-box-40 {
+    width: 40px;
+    height: 40px;
+}
+.icon-box-48 {
+    width: 48px;
+    height: 48px;
+}
+.icon-box-64 {
+    width: 64px;
+    height: 64px;
+}
+
+/* Components */
 .envyra-logo-custom {
     font-family:
-        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    color: var(--envyra-green) !important;
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
+}
+
+.hero-title-custom {
+    font-family:
+        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    letter-spacing: -1px;
 }
 
 .nav-link-custom {
-    color: var(--nav-text-color) !important;
-    font-size: 15px;
+    color: var(--nav-text-color);
+    font-size: 0.95rem;
     transition: color 0.2s ease-in-out;
 }
 
 .nav-link-custom:hover,
 .nav-link-custom.active {
-    color: var(--envyra-green) !important;
+    color: var(--envyra-green);
 }
 
 .btn-gabung-custom {
     background-color: var(--envyra-green);
-    border: none;
+    color: white;
     transition: background-color 0.2s ease-in-out;
 }
 
 .btn-gabung-custom:hover {
-    background-color: #04382a;
-}
-
-/* --- Hero Section --- */
-.hero-title-custom {
-    font-family:
-        "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", sans-serif;
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 1.2;
-    letter-spacing: -1px;
+    background-color: var(--envyra-green-hover);
+    color: white;
 }
 
 .hero-btn-outline {
     background-color: transparent;
     color: var(--envyra-brown);
     border: 1px solid var(--envyra-brown);
-    border-radius: 6px;
     font-weight: 500;
     transition: all 0.2s;
 }
@@ -66,10 +115,8 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-/* --- Features Section --- */
 .feature-card-custom {
-    background-color: #f8f9fe !important;
-    border-radius: 20px !important;
+    background-color: #f8f9fe;
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -80,44 +127,19 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-.icon-box-custom {
-    width: 60px;
-    height: 60px;
-    background-color: #e2e8f0;
-    color: var(--envyra-green);
-}
-
-@media (max-width: 991px) {
-    .hero-title {
-        font-size: 36px;
-    }
-    .hero-description {
-        max-width: 100%;
-    }
-    .hero-section {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-    .col-lg-6.pr-lg-5 {
-        padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
-    }
+.navbar-toggler-icon {
+    display: inline-block !important;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }
 
 @media (min-width: 992px) {
     .px-desktop-48 {
-        padding-left: 48px !important;
-        padding-right: 48px !important;
-    }
-
-    .nav-gap-32 {
-        gap: 32px;
-    }
-
-    .pr-lg-5 {
+        padding-left: 3rem !important;
         padding-right: 3rem !important;
-    }
-    .hero-section {
-        padding-top: 80px;
-        padding-bottom: 80px;
     }
 }
