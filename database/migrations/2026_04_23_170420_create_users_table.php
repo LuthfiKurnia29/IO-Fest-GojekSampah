@@ -18,7 +18,10 @@ return new class extends Migration {
             $table->string('phone')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('alamat');
+            $table->foreignId('wilayah_id')->nullable()->constrained('wilayahs', 'id');
             $table->enum('role', ['user', 'admin', 'kurir'])->default('user');
+            $table->enum('is_available', ['available', 'booked'])->default('available');
             $table->integer('poin')->default(0);
             $table->rememberToken();
             $table->timestamps();

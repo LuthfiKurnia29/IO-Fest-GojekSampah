@@ -13,11 +13,12 @@ return new class extends Migration {
         Schema::create('transaksi_sampahs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->integer('kurir_id');
             $table->foreignId('jenis_sampah_id')->constrained()->cascadeOnDelete();
             $table->foreignId('wilayah_id')->constrained()->cascadeOnDelete();
             $table->double('harga');
             $table->double('berat');
-            $table->string('status')->default('pending');
+            $table->enum('status', ['pending', 'taken', 'completed', 'assigned'])->default('pending');
             $table->timestamps();
         });
     }

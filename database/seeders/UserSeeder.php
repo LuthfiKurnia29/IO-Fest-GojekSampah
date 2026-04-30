@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
             'username' => 'admin',
             'password' => bcrypt('password'),
             'role' => 'admin',
-            'phone' => '081234567890'
+            'phone' => '081234567890',
+            'alamat' => 'surabaya'
         ]);
 
         User::create([
@@ -27,7 +28,8 @@ class UserSeeder extends Seeder
             'username' => 'user',
             'password' => bcrypt('password'),
             'role' => 'user',
-            'phone' => '081234567891'
+            'phone' => '081234567891',
+            'alamat' => 'Surabaya'
         ]);
 
         User::create([
@@ -36,7 +38,8 @@ class UserSeeder extends Seeder
             'username' => 'kurir',
             'password' => bcrypt('password'),
             'role' => 'kurir',
-            'phone' => '081234567892'
+            'phone' => '081234567892',
+            'alamat' => 'Sidoarjo'
         ]);
     }
 }
