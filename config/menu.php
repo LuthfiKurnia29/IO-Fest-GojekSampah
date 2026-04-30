@@ -34,33 +34,33 @@ return [
         ],
         [
             'name' => 'Penugasan Kurir',
-            'route' => 'order-pengambilan',
+            'route' => 'getTasksKurir',
             'roles' => ['admin'],
-            'icon' => ''
+            'icon' => 'assets/icon/set-task.svg'
         ],
         [
             'name' => 'Manajemen Sampah',
             'route' => 'order-pengambilan',
             'roles' => ['admin'],
-            'icon' => ''
+            'icon' => 'assets/icon/recycle.svg'
         ],
         [
             'name' => 'Manajemen Pengguna',
             'route' => 'order-pengambilan',
             'roles' => ['admin'],
-            'icon' => ''
+            'icon' => 'assets/icon/users.svg'
         ],
         [
             'name' => 'Ops Marketplace',
             'route' => 'order-pengambilan',
             'roles' => ['admin'],
-            'icon' => ''
+            'icon' => 'assets/icon/inventory.svg'
         ],
         [
             'name' => 'Log Aktivitas',
             'route' => 'order-pengambilan',
             'roles' => ['admin'],
-            'icon' => ''
+            'icon' => 'assets/icon/activity.svg'
         ],
         [
             'name' => 'Riwayat',

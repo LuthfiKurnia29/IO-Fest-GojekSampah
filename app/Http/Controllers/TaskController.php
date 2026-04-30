@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class TaskController extends Controller
 {
     private $taskService;
-    public function __construct(ITaskService $iTaskService) {
+    public function __construct(ITaskService $iTaskService)
+    {
         $this->taskService = $iTaskService;
     }
     //
@@ -19,7 +20,7 @@ class TaskController extends Controller
 
     public function getTasksKurir()
     {
-        
+        return view('order.admin.set-tugas');
     }
 
     public function takeTask(Request $request)
