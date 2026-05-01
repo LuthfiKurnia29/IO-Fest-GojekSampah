@@ -41,6 +41,8 @@ Route::delete('/jenis-sampah/{id}', [JenisSampahController::class, 'deleteJenisS
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
     Route::get('/order-pengambilan', [TransaksiSampahController::class, 'getViewMarket'])->name('order-pengambilan');
     Route::post('/order-pengambilan', [TransaksiSampahController::class, 'order'])->name('order');
 
@@ -49,4 +51,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/get-task', [TaskController::class, 'getTasksKurir'])->name('getTasksKurir');
 
+    //halaman tugas kurir (role kurir)
+    Route::get('/tugas-kurir', function () {
+        return view('order.kurir.tugas-kurir');
+    })->name('tugas-kurir');
 });
