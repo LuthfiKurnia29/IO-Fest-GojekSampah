@@ -4,7 +4,7 @@ return [
     'sidebar' => [
         [
             'name' => 'Dashboard',
-            'route' => 'getJenisSampah',
+            'route' => 'dashboard',
             'roles' => ['user', 'admin', 'kurir'],
             'icon' => 'assets/icon/dashboard.svg'
         ],

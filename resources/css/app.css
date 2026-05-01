@@ -241,3 +241,29 @@
 .shadow-sm {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05) !important;
 }
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn-outline-dark:hover {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .fs-5 {
+        font-size: 1rem !important;
+    }
+
+    padding: 20px !important;
+}
+

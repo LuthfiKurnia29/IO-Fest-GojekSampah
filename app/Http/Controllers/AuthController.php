@@ -36,7 +36,7 @@ class AuthController extends Controller
             Auth::login($result['user']);
             // if ($result['user']->role != 'user') {
             // redirect dashboard
-            return redirect()->route('order-pengambilan');
+            return redirect()->route('dashboard');
             // } else {
             //     // redirect landing page
             //     return redirect()->route('landing-page');
