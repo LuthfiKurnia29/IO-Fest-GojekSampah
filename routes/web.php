@@ -55,4 +55,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tugas-kurir', function () {
         return view('order.kurir.tugas-kurir');
     })->name('tugas-kurir');
+
+    //halaman history user
+    Route::get('/history', function () {
+        return view('history.user');
+    })->name('history');
 });

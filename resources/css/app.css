@@ -10,6 +10,7 @@
     --badge-bg3: #ffc697;
     --badge-text: #4a446f;
     --market-bg: #dee0ff;
+    --history-bg: #ececff;
 }
 
 /* Typography & Colors Utilities */
@@ -30,6 +31,9 @@
 }
 .bg-market {
     background-color: var(--market-bg) !important;
+}
+.bg-history {
+    background-color: var(--history-bg) !important;
 }
 .bg-badge1 {
     background-color: var(--badge-bg1) !important;
@@ -267,3 +271,14 @@
     padding: 20px !important;
 }
 
+.nav-pills .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #ffffff;
+    color: #212529;
+    box-shadow: 0 4px 10px rgba(25, 135, 84, 0.2);
+}
