@@ -1,14 +1,11 @@
 <div style="padding: 32px; background-color: #f8fafc;">
-    <!-- Header Section -->
     <div class="mb-4">
         <h1 class="fw-bold" style="color: #064e3b;">Selamat Datang, {{ Auth::user()->name }}!</h1>
         <p class="text-secondary">Mari lanjut berkontribusi untuk bumi yang lebih hijau hari ini.</p>
     </div>
 
     <div class="row g-4">
-        <!-- Left Column: Stats -->
         <div class="col-lg-4">
-            <!-- Point Card -->
             <div class="card border-0 text-white p-4 mb-4 position-relative overflow-hidden shadow-sm"
                 style="background-color: #1a5336; border-radius: 20px; height: 210px;">
                 <div class="position-relative z-1">
@@ -18,7 +15,7 @@
                         <span class="h4 mb-1 fw-bold">EP</span>
                     </div>
                 </div>
-                <!-- Abstract Circle Decor -->
+
                 <div class="position-absolute" style="right: -30px; top: -10px; opacity: 0.15;">
                     <svg width="200" height="200" viewBox="0 0 200 200">
                         <img src="{{ asset('assets/logo-ep.png') }}" alt="Leaf Icon" class="position-absolute"
@@ -27,7 +24,6 @@
                 </div>
             </div>
 
-            <!-- Weight Card -->
             <div class="card border-0 shadow-sm p-4" style="border-radius: 20px;">
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle d-flex align-items-center justify-content-center me-3"
@@ -52,7 +48,6 @@
             </div>
         </div>
 
-        <!-- Right Column: Sorting Guide -->
         <div class="col-lg-8">
             <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 20px;">
                 <h5 class="fw-bold mb-4" style="color: #064e3b;">Panduan Pemilahan</h5>
@@ -109,7 +104,7 @@
                     </div>
                 </div>
                 <button class="btn w-100 py-3 fw-bold text-white shadow-sm mt-auto"
-                    style="background-color: #064e3b; border-radius: 12px;">
+                    style="background-color: #064e3b; border-radius: 12px;" onclick="window.location.href='{{ route('order-pengambilan') }}'">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -125,9 +120,7 @@
         </div>
     </div>
 
-    <!-- Bottom Section -->
     <div class="row g-4 mt-2">
-        <!-- Recent Activities -->
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 20px;">
                 <h5 class="fw-bold mb-4">Aktivitas Terakhir</h5>
@@ -151,7 +144,7 @@
                         </div>
                         <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 py-2">SELESAI</span>
                     </div>
-                    <!-- Item 2 -->
+
                     <div class="d-flex align-items-center p-3 border-0 bg-light rounded-4 d-flex align-items-center justify-content-center">
                         <div class="rounded-circle bg-primary bg-opacity-10 p-1 me-3 text-primary">
                             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +168,6 @@
             </div>
         </div>
 
-        <!-- Exchange Recommendations -->
         <div class="col-lg-6">
             <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 20px;">
                 <h5 class="fw-bold mb-4">Rekomendasi Penukaran</h5>
