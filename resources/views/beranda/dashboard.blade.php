@@ -12,5 +12,6 @@
     <x-order.kurir.modal-tugas />
     @else
     <x-beranda.admin />
+    <x-order.admin.modal-set />
     @endif
 </x-layouts.sidebar>
