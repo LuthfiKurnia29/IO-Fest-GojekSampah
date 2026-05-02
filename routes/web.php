@@ -55,4 +55,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tugas-kurir', function () {
         return view('order.kurir.tugas-kurir');
     })->name('tugas-kurir');
+
+    //halaman history user
+    Route::get('/history', function () {
+        return view('history.user');
+    })->name('history');
+    
+    //halaman history kurir
+    Route::get('/history-kurir', function () {
+        return view('history.kurir');
+    })->name('history-kurir');
 });
