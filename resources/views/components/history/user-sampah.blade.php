@@ -40,7 +40,6 @@
                         <th class="border-0">Jenis Sampah</th>
                         <th class="border-0 d-none d-sm-table-cell">Berat</th>
                         <th class="border-0 text-center">Status</th>
-                        <th class="border-0 text-end pe-3 pe-md-4">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,9 +61,6 @@
                                 style="font-size: 0.72rem; white-space: nowrap;">
                                 Selesai
                             </span>
-                        </td>
-                        <td class="text-end pe-3 pe-md-4">
-                            <button class="btn btn-sm btn-light rounded-circle"><i class="bi bi-eye"></i></button>
                         </td>
                     </tr>
                 </tbody>

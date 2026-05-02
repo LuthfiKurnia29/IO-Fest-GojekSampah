@@ -60,4 +60,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/history', function () {
         return view('history.user');
     })->name('history');
+    
+    //halaman history kurir
+    Route::get('/history-kurir', function () {
+        return view('history.kurir');
+    })->name('history-kurir');
 });

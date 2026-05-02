@@ -64,8 +64,8 @@ return [
         ],
         [
             'name' => 'Riwayat',
-            'route' => 'getJenisSampah',
-            'roles' => ['admin', 'kurir'],
+            'route' => 'history-kurir',
+            'roles' => ['kurir'],
             'icon' => 'assets/icon/history.svg'
         ],
         [
