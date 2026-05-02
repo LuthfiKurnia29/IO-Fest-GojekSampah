@@ -162,30 +162,13 @@
                     <div class="d-flex align-items-center mb-3 text-success small fw-bold">
                         <i class="bi bi-calculator me-2"></i> RINCIAN PERHITUNGAN
                     </div>
-                    <div class="d-flex justify-content-between mb-2">
-                        <div>
-                            <div class="fw-bold small">Plastik (PET/HDPE)</div>
-                            <div class="text-secondary" style="font-size: 0.75rem;">5 Kg x Rp 1.000 / 200 EP</div>
-                        </div>
-                        <div class="text-end">
-                            <div class="fw-bold small">Rp 5.000</div>
-                            <div class="text-success fw-bold" style="font-size: 0.75rem;">1.000 EP</div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between mb-3">
-                        <div>
-                            <div class="fw-bold small">Kertas / Kardus</div>
-                            <div class="text-secondary" style="font-size: 0.75rem;">12 Kg x Rp 800 / 125 EP</div>
-                        </div>
-                        <div class="text-end">
-                            <div class="fw-bold small">Rp 9.600</div>
-                            <div class="text-success fw-bold" style="font-size: 0.75rem;">1.500 EP</div>
-                        </div>
+                    <div id="rincian-list">
+                        <!-- Dynamic content will be injected here -->
                     </div>
                     <div class="border-top pt-2 d-flex justify-content-between text-secondary"
                         style="font-size: 0.7rem;">
                         <span>* Estimasi tarif berdasarkan berat input</span>
-                        <span>Tgl: 24 Mei 2024</span>
+                        <span id="current-date">Tgl: {{ date('d M Y') }}</span>
                     </div>
                 </div>
 
@@ -205,13 +188,13 @@
                                 <h4 class="fw-bold mb-0 text-dark">
                                     <img src="{{ asset('assets/logo-ep.png') }}" alt="Logo EP" class="me-1"
                                         style="width: 20px; height: 20px;">
-                                    2.500
+                                    <span id="total-poin">0</span>
                                     <small class="fs-6 fw-normal">EP</small>
                                 </h4>
                             </div>
                             <div>
                                 <span class="text-secondary small">Estimasi Tagihan</span>
-                                <h4 class="fw-bold mb-0 text-dark">Rp 14.600</h4>
+                                <h4 class="fw-bold mb-0 text-dark" id="total-tagihan">Rp 0</h4>
                             </div>
                         </div>
                     </div>
@@ -230,3 +213,7 @@
         </div>
     </form>
 </div>
+
+<script>
+    window.jenisSampahData = @json($jenisSampah);
+</script>
